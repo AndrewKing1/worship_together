@@ -6,9 +6,11 @@ describe "Church Pages" do
     describe "show churches" do
 	describe "individually" do
 	    let (:church) { FactoryGirl.create(:church) }
-	    let!(:s) { FactoryGirl.create_list(:service, 10, church: church) }
-	    let!(:t) { FactoryGirl.create_list(:service, 10) }
-	    let!(:attendees) { FactoryGirl.create_list(:user, 25, church: church) }
+	    let (:num_services) { Kernel.rand(2..10) }
+	    let!(:s) { FactoryGirl.create_list(:service, num_services, church: church) }
+	    let!(:t) { FactoryGirl.create_list(:service, num_services) }
+	    let (:num_attend) { Kernel.rand(20..30) }
+	    let!(:attendees) { FactoryGirl.create_list(:user, num_attend, church: church) }
 	    let (:attend) { 'Attend this church' }
 
 	    before { visit church_path(church) }
@@ -20,7 +22,7 @@ describe "Church Pages" do
 
 	    it "should show connected services" do
 		s.each do |service|
-		    within("div.service#{service.id}") do
+		    within("div.service.service-#{service.id}") do
 			should have_content(service.start_time)
 			should have_content(service.finish_time)
 			should have_content(service.location)
@@ -31,13 +33,13 @@ describe "Church Pages" do
 
 	    it "should not show services for other churches" do
 		t.each do |service|
-		    should_not have_selector("div.service#{service.id}")
+		    should_not have_selector("div.service.service-#{service.id}")
 		end
 	    end
 
 	    it "should show attendees" do
 		attendees.each do |attendee|
-		    within("div.user#{attendee.id}") do
+		    within("div.user.user-#{attendee.id}") do
 			should have_link(attendee.name, href: user_path(attendee))
 		    end
 		end
@@ -117,13 +119,14 @@ describe "Church Pages" do
 	end
 
 	describe "all" do
+	    let (:num_churches) { Kernel.rand(20..30) }
 	    before do
-		25.times { |i| FactoryGirl.create(:church) }
+		num_churches.times { |i| FactoryGirl.create(:church) }
 		visit churches_path
 	    end
 
 	    it { should have_content('List of churches') }
-	    it { should have_content('25 churches') }
+	    it { should have_content("#{num_churches} churches") }
 
 	    it "should show all churches" do
 		Church.all.each do |church|

@@ -5,12 +5,13 @@ describe 'Service Pages' do
 
     describe "show services" do
 	describe "all" do
-	    let (:church) { FactoryGirl.create(:church, num_services: 25) }
+	    let (:num_services) { Kernel.rand(20..30) }
+	    let (:church) { FactoryGirl.create(:church, num_services: num_services) }
 
 	    before { visit church_services_path(church) }
 
 	    it { should have_content('List of services') }
-	    it { should have_content('25 services') }
+	    it { should have_content("#{num_services} services") }
 
 	    it "should show all services" do
 		Service.all.each do |service|
@@ -42,7 +43,8 @@ describe 'Service Pages' do
 	end
 
 	describe "individual" do
-	    let (:service) { FactoryGirl.create(:service, num_rides: 25) }
+	    let (:num_rides) { Kernel.rand(20..30) }
+	    let (:service) { FactoryGirl.create(:service, num_rides: num_rides) }
 
 	    before { visit service_path(service) }
 
@@ -53,7 +55,7 @@ describe 'Service Pages' do
 
 	    it "should show all associated rides" do
 		service.rides.each do |ride|
-		    within("div.ride#{ride.id}") do
+		    within("div.ride.ride-#{ride.id}") do
 			should have_content(ride.date)
 			should have_content(ride.seats_available)
 			should have_content(ride.meeting_location)
@@ -73,7 +75,7 @@ describe 'Service Pages' do
 		    visit service_path(service)
 		end
 
-		it { should have_selector("div.ride#{ride.id}",
+		it { should have_selector("div.ride.ride-#{ride.id}",
 					  text: '(provider)') }
 	    end
 
@@ -87,7 +89,7 @@ describe 'Service Pages' do
 		    visit service_path(service)
 		end
 
-		it { should have_selector("div.ride#{ride.id}",
+		it { should have_selector("div.ride.ride-#{ride.id}",
 					  text: '(rider)') }
 	    end
 
