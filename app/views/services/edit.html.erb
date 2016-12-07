@@ -1,0 +1,10 @@
+<h1>Edit service</h1>
+<%= render 'shared/errors', object: @service %>
+
+#added this from shared error partial from user views video
+
+<%= form_for @service do |form| %>
+    <%= render partial: 'fields', locals: {f:form} %>
+
+    <%= form.submit 'Update service profile' %>
+<% end %>

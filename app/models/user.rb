@@ -17,5 +17,6 @@ class User < ActiveRecord::Base
 			 [-a-z\d.]+ # dash, letter, digit, or dot chars
 			 \z         # end of input
 		        /xi }
-    validates :password, presence: true
+    validates :password, presence: true, on: :create
+    validates :name, length: {maximum: 50}
 end

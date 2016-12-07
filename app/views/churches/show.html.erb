@@ -1,0 +1,18 @@
+
+<% if current_user && current_user.church != @church%>
+<%= button_to 'Attend this church' , user_path(current_user,church_id: @church.id ) , method: :put %>
+<%end%>
+
+
+<% if current_user && current_user.church == @church %>
+<p>You attend</p>
+<%end%>
+
+<% if current_user && @church.user == current_user %>
+    <p>You manage</p>
+<%end%>
+
+<%= @church.name %>
+<%= link_to 'official web site',@church.web_site %>
+<img><%= @church.picture %></img>
+<%= @church.description %>

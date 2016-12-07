@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20140521175627) do
 
-  create_table "churches", force: true do |t|
+  create_table "churches", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "name"
     t.binary   "picture"
@@ -25,14 +25,14 @@ ActiveRecord::Schema.define(version: 20140521175627) do
 
   add_index "churches", ["user_id"], name: "index_churches_on_user_id"
 
-  create_table "locking_examples", force: true do |t|
+  create_table "locking_examples", force: :cascade do |t|
     t.string   "name"
     t.integer  "lock_version"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "rides", force: true do |t|
+  create_table "rides", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "service_id"
     t.date     "date"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20140521175627) do
   add_index "rides", ["service_id"], name: "index_rides_on_service_id"
   add_index "rides", ["user_id"], name: "index_rides_on_user_id"
 
-  create_table "services", force: true do |t|
+  create_table "services", force: :cascade do |t|
     t.integer  "church_id"
     t.string   "day_of_week"
     t.time     "start_time"
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20140521175627) do
 
   add_index "services", ["church_id"], name: "index_services_on_church_id"
 
-  create_table "user_rides", force: true do |t|
+  create_table "user_rides", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "ride_id"
     t.datetime "created_at"
@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 20140521175627) do
   add_index "user_rides", ["ride_id"], name: "index_user_rides_on_ride_id"
   add_index "user_rides", ["user_id"], name: "index_user_rides_on_user_id"
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
     t.datetime "created_at"

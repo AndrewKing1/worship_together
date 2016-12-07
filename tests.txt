@@ -1,0 +1,477 @@
+
+Randomized with seed 23602
+FFFFFFFFFFFFFFFFFFFF.FF
+
+Failures:
+
+  1) Ride Pages show rides all 
+     Failure/Error: before { visit service_rides_path(service) }
+
+     NoMethodError:
+       undefined method `service_rides_path' for #<RSpec::ExampleGroups::RidePages::ShowRides::All:0x00000003213d08>
+       Did you mean?  service_path
+     # ./spec/features/ride_pages_spec.rb:10:in `block (4 levels) in <top (required)>'
+
+  2) Ride Pages show rides all should show all rides
+     Failure/Error: before { visit service_rides_path(service) }
+
+     NoMethodError:
+       undefined method `service_rides_path' for #<RSpec::ExampleGroups::RidePages::ShowRides::All:0x00000006c2e8d0>
+       Did you mean?  service_path
+     # ./spec/features/ride_pages_spec.rb:10:in `block (4 levels) in <top (required)>'
+
+  3) Ride Pages show rides all 
+     Failure/Error: before { visit service_rides_path(service) }
+
+     NoMethodError:
+       undefined method `service_rides_path' for #<RSpec::ExampleGroups::RidePages::ShowRides::All:0x00000007284a68>
+       Did you mean?  service_path
+     # ./spec/features/ride_pages_spec.rb:10:in `block (4 levels) in <top (required)>'
+
+  4) Ride Pages show rides all by date 
+     Failure/Error: before { visit service_rides_path(service) }
+
+     NoMethodError:
+       undefined method `service_rides_path' for #<RSpec::ExampleGroups::RidePages::ShowRides::All::ByDate:0x000000075da870>
+       Did you mean?  service_path
+     # ./spec/features/ride_pages_spec.rb:10:in `block (4 levels) in <top (required)>'
+
+  5) Ride Pages show rides individually should text "4"
+     Failure/Error: it { should have_content(ride.seats_available) }
+       expected to find text "4" in "Log In"
+     # ./spec/features/ride_pages_spec.rb:70:in `block (4 levels) in <top (required)>'
+
+  6) Ride Pages show rides individually should not have button "Claim ride"
+     Failure/Error: it { should_not have_button(claim) }
+       expected not to find button "Claim ride", found 1 match: ""
+     # ./spec/features/ride_pages_spec.rb:74:in `block (4 levels) in <top (required)>'
+
+  7) Ride Pages show rides individually should text "4"
+     Failure/Error: it { should have_content(ride.number_of_seats) }
+       expected to find text "4" in "Log In"
+     # ./spec/features/ride_pages_spec.rb:71:in `block (4 levels) in <top (required)>'
+
+  8) Ride Pages show rides individually should text "The Holy Church"
+     Failure/Error: it { should have_content(ride.service.church.name) }
+       expected to find text "The Holy Church" in "Log In"
+     # ./spec/features/ride_pages_spec.rb:63:in `block (4 levels) in <top (required)>'
+
+  9) Ride Pages show rides individually should have link "User 241" with href "/users/1"
+     Failure/Error: it { should have_link(ride.user.name, href: user_path(ride.user)) }
+       expected to find link "User 241" with href "/users/1" but there were no matches
+     # ./spec/features/ride_pages_spec.rb:65:in `block (4 levels) in <top (required)>'
+
+  10) Ride Pages show rides individually should text "Somewhere casual"
+      Failure/Error: it { should have_content(ride.service.location) }
+        expected to find text "Somewhere casual" in "Log In"
+      # ./spec/features/ride_pages_spec.rb:64:in `block (4 levels) in <top (required)>'
+
+  11) Ride Pages show rides individually should text "Ford"
+      Failure/Error: it { should have_content(ride.vehicle) }
+        expected to find text "Ford" in "Log In"
+      # ./spec/features/ride_pages_spec.rb:69:in `block (4 levels) in <top (required)>'
+
+  12) Ride Pages show rides individually should text "2000-01-01 10:00:00 UTC"
+      Failure/Error: it { should have_content(ride.return_time) }
+        expected to find text "2000-01-01 10:00:00 UTC" in "Log In"
+      # ./spec/features/ride_pages_spec.rb:67:in `block (4 levels) in <top (required)>'
+
+  13) Ride Pages show rides individually should text "Somewhere casual"
+      Failure/Error: it { should have_content(ride.meeting_location) }
+        expected to find text "Somewhere casual" in "Log In"
+      # ./spec/features/ride_pages_spec.rb:68:in `block (4 levels) in <top (required)>'
+
+  14) Ride Pages show rides individually should text "2000-01-01 04:00:00 UTC"
+      Failure/Error: it { should have_content(ride.leave_time) }
+        expected to find text "2000-01-01 04:00:00 UTC" in "Log In"
+      # ./spec/features/ride_pages_spec.rb:66:in `block (4 levels) in <top (required)>'
+
+  15) Ride Pages show rides individually as the ride provider should text "You are providing"
+      Failure/Error: it { should have_content("You are providing") }
+        expected to find text "You are providing" in "Log Out"
+      # ./spec/features/ride_pages_spec.rb:117:in `block (5 levels) in <top (required)>'
+
+  16) Ride Pages show rides individually as the ride provider should not have button "Claim ride"
+      Failure/Error: it { should_not have_button(claim) }
+        expected not to find button "Claim ride", found 1 match: ""
+      # ./spec/features/ride_pages_spec.rb:116:in `block (5 levels) in <top (required)>'
+
+  17) Ride Pages show rides individually claiming a ride creates a user ride
+      Failure/Error: if @ride.update(order_params)
+
+      NameError:
+        undefined local variable or method `order_params' for #<RidesController:0x00000004d50800>
+      # ./app/controllers/rides_controller.rb:42:in `update'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/abstract_controller/base.rb:198:in `process_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_controller/metal/rendering.rb:10:in `process_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/callbacks.rb:115:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/callbacks.rb:553:in `block (2 levels) in compile'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/callbacks.rb:503:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/callbacks.rb:88:in `run_callbacks'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/abstract_controller/callbacks.rb:19:in `process_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_controller/metal/rescue.rb:29:in `process_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/notifications.rb:164:in `block in instrument'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/notifications.rb:164:in `instrument'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activerecord-4.2.3/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/abstract_controller/base.rb:137:in `process'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionview-4.2.3/lib/action_view/rendering.rb:30:in `process'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_controller/metal.rb:196:in `dispatch'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_controller/metal.rb:237:in `block in action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/routing/route_set.rb:45:in `serve'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/journey/router.rb:43:in `block in serve'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/journey/router.rb:30:in `each'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/journey/router.rb:30:in `serve'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/routing/route_set.rb:821:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/etag.rb:24:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/conditionalget.rb:38:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/head.rb:13:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/flash.rb:260:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/session/abstract/id.rb:225:in `context'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/session/abstract/id.rb:220:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/cookies.rb:560:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activerecord-4.2.3/lib/active_record/query_cache.rb:36:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activerecord-4.2.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/callbacks.rb:84:in `run_callbacks'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/railties-4.2.3/lib/rails/rack/logger.rb:38:in `call_app'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/railties-4.2.3/lib/rails/rack/logger.rb:20:in `block in call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/tagged_logging.rb:68:in `block in tagged'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/tagged_logging.rb:26:in `tagged'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/tagged_logging.rb:68:in `tagged'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/railties-4.2.3/lib/rails/rack/logger.rb:20:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/methodoverride.rb:22:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/runtime.rb:18:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/lock.rb:17:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/static.rb:116:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/sendfile.rb:113:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/railties-4.2.3/lib/rails/engine.rb:518:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/railties-4.2.3/lib/rails/application.rb:165:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/urlmap.rb:66:in `block in call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/urlmap.rb:50:in `each'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/urlmap.rb:50:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-test-0.6.3/lib/rack/mock_session.rb:30:in `request'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-test-0.6.3/lib/rack/test.rb:244:in `process_request'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-test-0.6.3/lib/rack/test.rb:67:in `post'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/rack_test/browser.rb:61:in `process'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/rack_test/browser.rb:36:in `process_and_follow_redirects'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/rack_test/browser.rb:27:in `submit'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/rack_test/form.rb:79:in `submit'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/rack_test/node.rb:62:in `click'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/node/element.rb:135:in `block in click'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/node/base.rb:85:in `synchronize'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/node/element.rb:135:in `click'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/node/actions.rb:57:in `click_button'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/session.rb:735:in `block (2 levels) in <class:Session>'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/dsl.rb:52:in `block (2 levels) in <module:DSL>'
+      # ./spec/features/ride_pages_spec.rb:94:in `block (6 levels) in <top (required)>'
+      # ./spec/features/ride_pages_spec.rb:94:in `block (5 levels) in <top (required)>'
+
+  18) Ride Pages show rides individually claiming a ride changes the data
+      Failure/Error: if @ride.update(order_params)
+
+      NameError:
+        undefined local variable or method `order_params' for #<RidesController:0x00000006e55168>
+      # ./app/controllers/rides_controller.rb:42:in `update'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/abstract_controller/base.rb:198:in `process_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_controller/metal/rendering.rb:10:in `process_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/callbacks.rb:115:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/callbacks.rb:553:in `block (2 levels) in compile'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/callbacks.rb:503:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/callbacks.rb:88:in `run_callbacks'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/abstract_controller/callbacks.rb:19:in `process_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_controller/metal/rescue.rb:29:in `process_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/notifications.rb:164:in `block in instrument'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/notifications.rb:164:in `instrument'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activerecord-4.2.3/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/abstract_controller/base.rb:137:in `process'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionview-4.2.3/lib/action_view/rendering.rb:30:in `process'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_controller/metal.rb:196:in `dispatch'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_controller/metal.rb:237:in `block in action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/routing/route_set.rb:45:in `serve'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/journey/router.rb:43:in `block in serve'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/journey/router.rb:30:in `each'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/journey/router.rb:30:in `serve'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/routing/route_set.rb:821:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/etag.rb:24:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/conditionalget.rb:38:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/head.rb:13:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/flash.rb:260:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/session/abstract/id.rb:225:in `context'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/session/abstract/id.rb:220:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/cookies.rb:560:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activerecord-4.2.3/lib/active_record/query_cache.rb:36:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activerecord-4.2.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/callbacks.rb:84:in `run_callbacks'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/railties-4.2.3/lib/rails/rack/logger.rb:38:in `call_app'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/railties-4.2.3/lib/rails/rack/logger.rb:20:in `block in call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/tagged_logging.rb:68:in `block in tagged'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/tagged_logging.rb:26:in `tagged'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/tagged_logging.rb:68:in `tagged'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/railties-4.2.3/lib/rails/rack/logger.rb:20:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/methodoverride.rb:22:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/runtime.rb:18:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/lock.rb:17:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/static.rb:116:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/sendfile.rb:113:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/railties-4.2.3/lib/rails/engine.rb:518:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/railties-4.2.3/lib/rails/application.rb:165:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/urlmap.rb:66:in `block in call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/urlmap.rb:50:in `each'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/urlmap.rb:50:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-test-0.6.3/lib/rack/mock_session.rb:30:in `request'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-test-0.6.3/lib/rack/test.rb:244:in `process_request'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-test-0.6.3/lib/rack/test.rb:67:in `post'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/rack_test/browser.rb:61:in `process'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/rack_test/browser.rb:36:in `process_and_follow_redirects'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/rack_test/browser.rb:27:in `submit'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/rack_test/form.rb:79:in `submit'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/rack_test/node.rb:62:in `click'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/node/element.rb:135:in `block in click'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/node/base.rb:85:in `synchronize'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/node/element.rb:135:in `click'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/node/actions.rb:57:in `click_button'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/session.rb:735:in `block (2 levels) in <class:Session>'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/dsl.rb:52:in `block (2 levels) in <module:DSL>'
+      # ./spec/features/ride_pages_spec.rb:89:in `block (5 levels) in <top (required)>'
+
+  19) Ride Pages show rides individually claiming a ride stops displaying the button after clicking
+      Failure/Error: if @ride.update(order_params)
+
+      NameError:
+        undefined local variable or method `order_params' for #<RidesController:0x00000006f5fe28>
+      # ./app/controllers/rides_controller.rb:42:in `update'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/abstract_controller/base.rb:198:in `process_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_controller/metal/rendering.rb:10:in `process_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/callbacks.rb:115:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/callbacks.rb:553:in `block (2 levels) in compile'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/callbacks.rb:503:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/callbacks.rb:88:in `run_callbacks'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/abstract_controller/callbacks.rb:19:in `process_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_controller/metal/rescue.rb:29:in `process_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/notifications.rb:164:in `block in instrument'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/notifications.rb:164:in `instrument'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activerecord-4.2.3/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/abstract_controller/base.rb:137:in `process'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionview-4.2.3/lib/action_view/rendering.rb:30:in `process'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_controller/metal.rb:196:in `dispatch'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_controller/metal.rb:237:in `block in action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/routing/route_set.rb:45:in `serve'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/journey/router.rb:43:in `block in serve'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/journey/router.rb:30:in `each'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/journey/router.rb:30:in `serve'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/routing/route_set.rb:821:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/etag.rb:24:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/conditionalget.rb:38:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/head.rb:13:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/flash.rb:260:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/session/abstract/id.rb:225:in `context'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/session/abstract/id.rb:220:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/cookies.rb:560:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activerecord-4.2.3/lib/active_record/query_cache.rb:36:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activerecord-4.2.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/callbacks.rb:84:in `run_callbacks'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/railties-4.2.3/lib/rails/rack/logger.rb:38:in `call_app'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/railties-4.2.3/lib/rails/rack/logger.rb:20:in `block in call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/tagged_logging.rb:68:in `block in tagged'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/tagged_logging.rb:26:in `tagged'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/tagged_logging.rb:68:in `tagged'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/railties-4.2.3/lib/rails/rack/logger.rb:20:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/methodoverride.rb:22:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/runtime.rb:18:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/lock.rb:17:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/static.rb:116:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/sendfile.rb:113:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/railties-4.2.3/lib/rails/engine.rb:518:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/railties-4.2.3/lib/rails/application.rb:165:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/urlmap.rb:66:in `block in call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/urlmap.rb:50:in `each'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/urlmap.rb:50:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-test-0.6.3/lib/rack/mock_session.rb:30:in `request'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-test-0.6.3/lib/rack/test.rb:244:in `process_request'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-test-0.6.3/lib/rack/test.rb:67:in `post'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/rack_test/browser.rb:61:in `process'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/rack_test/browser.rb:36:in `process_and_follow_redirects'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/rack_test/browser.rb:27:in `submit'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/rack_test/form.rb:79:in `submit'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/rack_test/node.rb:62:in `click'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/node/element.rb:135:in `block in click'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/node/base.rb:85:in `synchronize'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/node/element.rb:135:in `click'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/node/actions.rb:57:in `click_button'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/session.rb:735:in `block (2 levels) in <class:Session>'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/dsl.rb:52:in `block (2 levels) in <module:DSL>'
+      # ./spec/features/ride_pages_spec.rb:103:in `block (5 levels) in <top (required)>'
+
+  20) Ride Pages show rides individually claiming a ride produces an update message
+      Failure/Error: if @ride.update(order_params)
+
+      NameError:
+        undefined local variable or method `order_params' for #<RidesController:0x0000000723ee00>
+      # ./app/controllers/rides_controller.rb:42:in `update'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/abstract_controller/base.rb:198:in `process_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_controller/metal/rendering.rb:10:in `process_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/callbacks.rb:115:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/callbacks.rb:553:in `block (2 levels) in compile'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/callbacks.rb:503:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/callbacks.rb:88:in `run_callbacks'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/abstract_controller/callbacks.rb:19:in `process_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_controller/metal/rescue.rb:29:in `process_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/notifications.rb:164:in `block in instrument'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/notifications.rb:164:in `instrument'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activerecord-4.2.3/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/abstract_controller/base.rb:137:in `process'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionview-4.2.3/lib/action_view/rendering.rb:30:in `process'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_controller/metal.rb:196:in `dispatch'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_controller/metal.rb:237:in `block in action'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/routing/route_set.rb:45:in `serve'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/journey/router.rb:43:in `block in serve'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/journey/router.rb:30:in `each'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/journey/router.rb:30:in `serve'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/routing/route_set.rb:821:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/etag.rb:24:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/conditionalget.rb:38:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/head.rb:13:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/flash.rb:260:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/session/abstract/id.rb:225:in `context'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/session/abstract/id.rb:220:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/cookies.rb:560:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activerecord-4.2.3/lib/active_record/query_cache.rb:36:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activerecord-4.2.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/callbacks.rb:84:in `run_callbacks'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/railties-4.2.3/lib/rails/rack/logger.rb:38:in `call_app'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/railties-4.2.3/lib/rails/rack/logger.rb:20:in `block in call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/tagged_logging.rb:68:in `block in tagged'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/tagged_logging.rb:26:in `tagged'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/tagged_logging.rb:68:in `tagged'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/railties-4.2.3/lib/rails/rack/logger.rb:20:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/request_id.rb:21:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/methodoverride.rb:22:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/runtime.rb:18:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/activesupport-4.2.3/lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/lock.rb:17:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/actionpack-4.2.3/lib/action_dispatch/middleware/static.rb:116:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/sendfile.rb:113:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/railties-4.2.3/lib/rails/engine.rb:518:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/railties-4.2.3/lib/rails/application.rb:165:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/urlmap.rb:66:in `block in call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/urlmap.rb:50:in `each'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-1.6.5/lib/rack/urlmap.rb:50:in `call'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-test-0.6.3/lib/rack/mock_session.rb:30:in `request'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-test-0.6.3/lib/rack/test.rb:244:in `process_request'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/rack-test-0.6.3/lib/rack/test.rb:67:in `post'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/rack_test/browser.rb:61:in `process'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/rack_test/browser.rb:36:in `process_and_follow_redirects'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/rack_test/browser.rb:27:in `submit'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/rack_test/form.rb:79:in `submit'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/rack_test/node.rb:62:in `click'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/node/element.rb:135:in `block in click'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/node/base.rb:85:in `synchronize'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/node/element.rb:135:in `click'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/node/actions.rb:57:in `click_button'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/session.rb:735:in `block (2 levels) in <class:Session>'
+      # /home/AndrewKing1/.rvm/gems/ruby-2.3.1/gems/capybara-2.10.1/lib/capybara/dsl.rb:52:in `block (2 levels) in <module:DSL>'
+      # ./spec/features/ride_pages_spec.rb:98:in `block (5 levels) in <top (required)>'
+
+  21) Ride Pages show rides individually as a rider should text "You are riding"
+      Failure/Error: it { should have_content("You are riding") }
+        expected to find text "You are riding" in "Log Out"
+      # ./spec/features/ride_pages_spec.rb:129:in `block (5 levels) in <top (required)>'
+
+  22) Ride Pages show rides individually as a rider should not have button "Claim ride"
+      Failure/Error: it { should_not have_button(claim) }
+        expected not to find button "Claim ride", found 1 match: ""
+      # ./spec/features/ride_pages_spec.rb:128:in `block (5 levels) in <top (required)>'
+
+1 deprecation warning total
+
+Finished in 3.61 seconds (files took 9.51 seconds to load)
+23 examples, 22 failures
+
+Failed examples:
+
+rspec ./spec/features/ride_pages_spec.rb:13 # Ride Pages show rides all 
+rspec ./spec/features/ride_pages_spec.rb:15 # Ride Pages show rides all should show all rides
+rspec ./spec/features/ride_pages_spec.rb:12 # Ride Pages show rides all 
+rspec ./spec/features/ride_pages_spec.rb:30 # Ride Pages show rides all by date 
+rspec ./spec/features/ride_pages_spec.rb:70 # Ride Pages show rides individually should text "4"
+rspec ./spec/features/ride_pages_spec.rb:74 # Ride Pages show rides individually should not have button "Claim ride"
+rspec ./spec/features/ride_pages_spec.rb:71 # Ride Pages show rides individually should text "4"
+rspec ./spec/features/ride_pages_spec.rb:63 # Ride Pages show rides individually should text "The Holy Church"
+rspec ./spec/features/ride_pages_spec.rb:65 # Ride Pages show rides individually should have link "User 241" with href "/users/1"
+rspec ./spec/features/ride_pages_spec.rb:64 # Ride Pages show rides individually should text "Somewhere casual"
+rspec ./spec/features/ride_pages_spec.rb:69 # Ride Pages show rides individually should text "Ford"
+rspec ./spec/features/ride_pages_spec.rb:67 # Ride Pages show rides individually should text "2000-01-01 10:00:00 UTC"
+rspec ./spec/features/ride_pages_spec.rb:68 # Ride Pages show rides individually should text "Somewhere casual"
+rspec ./spec/features/ride_pages_spec.rb:66 # Ride Pages show rides individually should text "2000-01-01 04:00:00 UTC"
+rspec ./spec/features/ride_pages_spec.rb:117 # Ride Pages show rides individually as the ride provider should text "You are providing"
+rspec ./spec/features/ride_pages_spec.rb:116 # Ride Pages show rides individually as the ride provider should not have button "Claim ride"
+rspec ./spec/features/ride_pages_spec.rb:93 # Ride Pages show rides individually claiming a ride creates a user ride
+rspec ./spec/features/ride_pages_spec.rb:88 # Ride Pages show rides individually claiming a ride changes the data
+rspec ./spec/features/ride_pages_spec.rb:102 # Ride Pages show rides individually claiming a ride stops displaying the button after clicking
+rspec ./spec/features/ride_pages_spec.rb:97 # Ride Pages show rides individually claiming a ride produces an update message
+rspec ./spec/features/ride_pages_spec.rb:129 # Ride Pages show rides individually as a rider should text "You are riding"
+rspec ./spec/features/ride_pages_spec.rb:128 # Ride Pages show rides individually as a rider should not have button "Claim ride"
+
+Randomized with seed 23602
+

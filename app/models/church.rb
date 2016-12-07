@@ -4,4 +4,9 @@ class Church < ActiveRecord::Base
   has_many :users, inverse_of: :church
 
   accepts_nested_attributes_for :services
+
+  validates :name,presence: true
+  validates :user_id, presence: true
+
+
 end
